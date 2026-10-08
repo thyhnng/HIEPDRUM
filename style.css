@@ -17,10 +17,14 @@ body {
     background-repeat: no-repeat;
 }
 
-.navbar{
+.navbar {
     display: flex;
     align-items: center;
-    padding: 40px;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 nav {
@@ -64,31 +68,32 @@ p {
 }
 
 .col-2 {
-    flex-basis: 50%;
-    min-width: 300px;
+    flex-basis: 100%;
     text-align: center;
-    margin: 200px 0;
+    margin: 200px auto 40px auto;
 }
 
 .col-2 h1 {
     font-size: 80px;
-    line-height: 60px;
     line-height: 90%;
-    color:white;
+    color: white;
     font-family: 'Special Gothic Expanded One';
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 100px;
 }
 
 .col-2 p {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 150;
     margin-top: 15px;
 }
 
-
-
-
 .social-links {
-    margin-top: 25px;
+    margin-top: 35lvh;
     margin-bottom: 50px; 
     display: flex;
     justify-content: center;
@@ -117,21 +122,119 @@ p {
 }
 
 .social-links a[aria-label="TikTok"] img {
-    height: 30px; /* Adjust this value down (e.g., 18px or 20px) until it matches visually */
+    height: 30px;
 }
 
-.btn {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
+.projects {
+    margin: 50px 0;
+}
+
+.slider-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 60px;
+    width: max-content;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.col-3 {
+    flex: 0 0 220px;
+    scroll-snap-align: start;
+}
+
+.col-3 h3 {
+    font-size: 20px;
+    color:white;
+    font-family: 'Special Gothic Expanded One';
+    font-weight: 150;
+    margin-bottom: 5px;
+}
+
+.col-3 p {
+    font-size: 14px;
+    color:white;
+    font-family: 'Be Vietnam Pro';
+    font-weight: 150;
+}
+
+.vinyl-card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.sleeve {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+    background-color: #1f1f1f;
+    padding: 12px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    flex-shrink: 0;
+}
+
+.disc {
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-left: -100px;
+    transition: transform 0.3s ease;
+}
+
+.vinyl-card:hover .disc {
+    transform: translateX(20px);
+}
+
+.projects h1 {
+    font-size: 30px;
+    color:white;
+    font-family: 'Special Gothic Expanded One';
+    text-align: center;
+    margin-bottom: 80px;
+    font-weight: 300;
+}
+
+.tracks-btn {
+    color: rgba(255, 255, 255, 0.7);
     border: none;
-    padding: 8px 20px;
-    margin-top: 50px; 
-    margin-bottom: 50px;
-    border-radius: 30px;
-    transition: background 0.3s ease;
+    padding: 20px 0;
+    transition: 0.3s ease;
+    text-align: center;
 }
 
-.btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+.tracks-btn:hover {
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-3px);
 }
