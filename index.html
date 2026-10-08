@@ -54,9 +54,10 @@
     </div>
     </div>
     </div>
------ featured tracks -----
+
+----- tracks -----
     <div class="projects">
-    <h1 class="title">Featured &nbsp; Tracks</h1>
+    <h1 class="title">Featured Tracks</h1>
         <div class="row">
             <div class="col-3">
                 <div class="vinyl-card">
@@ -102,5 +103,49 @@
            
         </div>
     </div>
+----- about -----
+    <div class="about">
+    <div class="col-4">
+        <h1>About Hiep Drum</h1>
+        <p>Hiep Drum là một DJ/Producer đến từ Hải Phòng. Với nguồn cảm hứng từ dòng nhạc đất cảng, anh ấy đã làm ra những bản nhạc remix cực kì cháy!!</p>
+    </div>
+    <img src="images/about.png" alt="About Hiep Drum">
+    </div>
+
+    <script>
+    const aboutImg = document.querySelector('.about img');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    if (aboutImg) {
+        observer.observe(aboutImg);
+    }
+    </script>
+
+----- contact -----
+    <div class="contact">
+    <div class="contact-box">
+        <h1>Contact</h1>
+
+        <form>
+        <div class="input-row">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+        </div>
+
+        <textarea placeholder="Description" rows="6" required></textarea>
+
+        <button type="submit">Send</button>
+        </form>
+    </div>
+    </div>
+        
+
 </body>
 </html>

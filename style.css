@@ -23,7 +23,7 @@ body {
     padding: 20px 40px;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 0;
     transition: all 0.3s ease;
 }
 
@@ -126,7 +126,7 @@ p {
 }
 
 .projects {
-    margin: 50px 0;
+    margin-top: 200px;
 }
 
 .slider-container {
@@ -175,7 +175,7 @@ p {
     font-size: 14px;
     color:white;
     font-family: 'Be Vietnam Pro';
-    font-weight: 150;
+    font-weight: 200;
 }
 
 .vinyl-card {
@@ -222,7 +222,7 @@ p {
     color:white;
     font-family: 'Special Gothic Expanded One';
     text-align: center;
-    margin-bottom: 80px;
+    margin: 100px 0;
     font-weight: 300;
 }
 
@@ -237,4 +237,155 @@ p {
 .tracks-btn:hover {
     color: rgba(255, 255, 255, 1);
     transform: translateY(-3px);
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 200px auto;
+    padding: 50px 100px;
+    gap: 60px;
+}
+
+.about h1 {
+    font-size: 32px;
+    color: white;
+    font-family: 'Special Gothic Expanded One';
+    text-align: left;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.col-4 {
+    flex: 1;
+    max-width: 500px;
+    margin: 0;
+}
+
+.col-4 p {
+    font-size: 16px;
+    color: white;
+    font-family: 'Be Vietnam Pro';
+    text-align: left;
+    line-height: 1.6;
+    font-weight: 250;
+    word-wrap: break-word;
+}
+
+.about img {
+    flex: 1;
+    max-width: 450px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact {
+    height: 100vh; 
+    margin: 50px 0;
+    background:  linear-gradient(to bottom, black, transparent 50%),
+    linear-gradient(to top, black, transparent 50%),url(images/contact-bg.gif) no-repeat center center;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.contact-box {
+    width: 800px;
+    max-width: 90%;
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.contact-box h1 {
+    font-size: 30px;
+    color: white;
+    font-family: 'Special Gothic Expanded One';
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-row input,
+.contact-box textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro';
+}
+
+.input-row input::placeholder,
+.contact-box textarea::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.contact-box textarea {
+    resize: none;
+    min-height: 180px;
+    margin-bottom: 15px;
+}
+
+.input-row input:focus,
+.contact-box textarea:focus {
+    border-color: white;
+    background: rgba(255,255,255,0.15);
+}
+
+.contact-box button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgb(54, 54, 54);
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contact-box button:hover {
+    background: #d9d9d9;
+    background-color:#ffffff;
+    color:black;
+    transform: translateY(-2px);
 }
