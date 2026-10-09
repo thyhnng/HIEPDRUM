@@ -3,149 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIEP DRUM</title>
+    <title>HIEP DRUM | DJ & Producer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&family=Staatliches&display=swap" rel="stylesheet">
 </head>
-
-
 <body>
-    <div class="header">
-    <div class="container">
-        <div class="navbar">
-        <div class="logo">
-            <img src="images/logo.png" width ="125px">
+
+    <!-- Header / Hero Section -->
+    <header class="header" id="home">
+        <div class="navbar-wrapper">
+            <div class="container navbar">
+                <div class="logo">
+                    <a href="#home"><img src="images/logo.png" alt="Hiep Drum Logo" width="120"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="tracks.html">Tracks</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Tracks</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="row">
-        <div class="col-2">
 
-            <h1>HIEP DRUM</h1>
-            <p>DJ - Producer</p>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>HIEP DRUM</h1>
+                <p class="subtitle">DJ &bull; PRODUCER</p>
 
-            <div class="social-links">
-                <a href="https://soundcloud.com/hiepdrum" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud">
-                    <img src="images/sclogo.png" alt="SoundCloud">
-                </a>
-                <a href="https://zalo.me/16602805980" target="_blank" rel="noopener noreferrer" aria-label="Zalo">
-                    <img src="images/zllogo.png" alt="Zalo">
-                </a>
-                <a href="https://tiktok.com/@hiepdrumproducer" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                    <img src="images/ttlogo.png" alt="TikTok">
-                </a>
+                <div class="social-links">
+                    <a href="https://soundcloud.com/hiepdrum" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud">
+                        <img src="images/sclogo.png" alt="SoundCloud">
+                    </a>
+                    <a href="https://zalo.me/16602805980" target="_blank" rel="noopener noreferrer" aria-label="Zalo">
+                        <img src="images/zllogo.png" alt="Zalo">
+                    </a>
+                    <a href="https://tiktok.com/@hiepdrumproducer" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <img src="images/ttlogo.png" alt="TikTok">
+                    </a>
+                </div>
             </div>
-
         </div>
-    </div>
-    </div>
-    </div>
+    </header>
 
------ tracks -----
-    <div class="projects">
-    <h1 class="title">Featured Tracks</h1>
-        <div class="row">
-            <div class="col-3">
+    <!-- Featured Tracks Section -->
+    <section class="projects" id="tracks">
+        <div class="container">
+            <h2 class="section-title">Featured Tracks</h2>
+            
+            <div class="tracks-grid">
+                <!-- Track 1 -->
                 <div class="vinyl-card">
-                    <div class="sleeve">
-                        <h3>Ai Khoc Noi Dau Nay</h3>
-                        <p>Hiep Drum (2026)</p>
-                    </div>
-                    <img src="images/disc.png" alt="Track 1" class="disc">
+                    <a href="track-ai-khoc-noi-dau-nay.html" class="vinyl-card-link">
+                        <div class="sleeve">
+                            <h3>Ai Khoc Noi Dau Nay</h3>
+                            <p>Hiep Drum (2026)</p>
+                        </div>
+                        <img src="images/disc.png" alt="Ai Khoc Noi Dau Nay Disc" class="disc">
+                    </a>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="vinyl-card">
+                    <a href="track-stereo-love.html" class="vinyl-card-link">
+                        <div class="sleeve">
+                            <h3>Stereo Love</h3>
+                            <p>Hiep Drum (2026)</p>
+                        </div>
+                        <img src="images/disc.png" alt="Stereo Love Disc" class="disc">
+                    </a>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="vinyl-card">
+                    <a href="track-i-like-it.html" class="vinyl-card-link">
+                        <div class="sleeve">
+                            <h3>I Like It</h3>
+                            <p>Hiep Drum (2026)</p>
+                        </div>
+                        <img src="images/disc.png" alt="I Like It Disc" class="disc">
+                    </a>
+                </div>
+
+                <!-- Track 4 -->
+                <div class="vinyl-card">
+                    <a href="track-feel-good-inc.html" class="vinyl-card-link">
+                        <div class="sleeve">
+                            <h3>Feel Good INC</h3>
+                            <p>Hiep Drum (2026)</p>
+                        </div>
+                        <img src="images/disc.png" alt="Feel Good INC Disc" class="disc">
+                    </a>
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="vinyl-card">
-                    <div class="sleeve">
-                        <h3>Stereo Love</h3>
-                        <p>Hiep Drum (2026)</p>
-                    </div>
-                    <img src="images/disc.png" alt="Track 2" class="disc">
-                </div>
+            <div class="cta-container">
+                <a href="tracks.html" class="tracks-btn">All Tracks &nbsp;&rarr;</a>
             </div>
-
-            <div class="col-3">
-                <div class="vinyl-card">
-                    <div class="sleeve">
-                        <h3>I Like It</h3>
-                        <p>Hiep Drum (2026)</p>
-                    </div>
-                    <img src="images/disc.png" alt="Track 3" class="disc">
-                </div>
-            </div>
-
-            <div class="col-3">
-                <div class="vinyl-card">
-                    <div class="sleeve">
-                        <h3>Feel Good INC</h3>
-                        <p>Hiep Drum (2026)</p>
-                    </div>
-                    <img src="images/disc.png" alt="Track 4" class="disc">
-                </div>
-            </div> 
-            <a href="" class = "tracks-btn">All Tracks &nbsp; &rarr;</a>
-            </div>
-           
         </div>
-    </div>
------ about -----
-    <div class="about">
-    <div class="col-4">
-        <h1>About Hiep Drum</h1>
-        <p>Hiep Drum là một DJ/Producer đến từ Hải Phòng. Với nguồn cảm hứng từ dòng nhạc đất cảng, anh ấy đã làm ra những bản nhạc remix cực kì cháy!!</p>
-    </div>
-    <img src="images/about.png" alt="About Hiep Drum">
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2>About Hiep Drum</h2>
+                <p>Hiep Drum là một DJ/Producer đến từ Hải Phòng. Với nguồn cảm hứng từ dòng nhạc đất cảng, anh ấy đã làm ra những bản nhạc remix cực kì cháy!!</p>
+            </div>
+            <div class="about-img-wrapper">
+                <img src="images/about.png" alt="Hiep Drum performing">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-box">
+            <h2>Contact</h2>
+            <form>
+                <div class="input-row">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <textarea placeholder="Message" rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="contact-links">
+            <a href="https://zalo.me/16602805980" target="_blank" rel="noopener noreferrer" aria-label="Zalo">
+                <img src="images/zllogo.png" alt="Zalo">
+            </a>
+            <a href="https://www.facebook.com/minh.duc.219362" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <img src="images/fblogo.png" alt="Facebook">
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="copyright">
+        <p>&copy; 2026 Hiep Drum. All rights reserved.</p>
+    </footer>
 
     <script>
-    const aboutImg = document.querySelector('.about img');
+        const aboutImg = document.querySelector('.about-img-wrapper img');
+        if (aboutImg) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.2 });
-
-    if (aboutImg) {
-        observer.observe(aboutImg);
-    }
+            observer.observe(aboutImg);
+        }
     </script>
-
------ contact -----
-    <div class="contact">
-    <div class="contact-box">
-        <h1>Contact</h1>
-
-        <form>
-        <div class="input-row">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-        </div>
-
-        <textarea placeholder="Description" rows="6" required></textarea>
-
-        <button type="submit">Send</button>
-        </form>
-    </div>
-    </div>
-        
-
 </body>
 </html>

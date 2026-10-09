@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Like It | HIEP DRUM</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header tracks-header">
+        <div class="navbar-wrapper">
+            <div class="container navbar">
+                <div class="logo">
+                    <a href="index.html#home"><img src="images/logo.png" alt="Hiep Drum Logo" width="120"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="tracks.html" class="active">Tracks</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Track Detail Section -->
+    <main class="all-tracks-page">
+        <div class="container">
+            <div class="back-home-container" style="text-align: left; margin-bottom: 30px;">
+                <a href="tracks.html" class="tracks-btn">&larr; Back to Tracks</a>
+            </div>
+
+            <div class="about-container" style="align-items: center; justify-content: center; gap: 200px;">
+    
+                <!-- Vinyl Disc Player Display with Play Button -->
+                <div class="vinyl-player-wrapper">
+                    <div class="vinyl-record" id="vinylRecord">
+                        <!-- Black Outer Disc with Realistic Grooves -->
+                        <div class="vinyl-grooves"></div>
+                        
+                        <!-- Center Label Artwork -->
+                        <div class="record-center-label">
+                            <img src="images/cover1.jpg" alt="I Like It Cover" class="record-cover">
+                            <div class="record-hole"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Borderless Center Play Button -->
+                    <button class="vinyl-play-btn" id="vinylPlayBtn" type="button" aria-label="Toggle Play">&#9654;</button>
+                </div>
+                
+                <!-- Song Details & Streaming Player -->
+                <div class="about-text" style="max-width: 500px;">
+                    <h1 style="font-family: 'Special Gothic Expanded One', sans-serif; font-weight: 300; margin-bottom: 10px;">
+                        I Like It
+                    </h1>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 20px;">Hiep Drum &bull; 2026</p>
+
+                    <div style="margin: 30px 0;">
+                        <audio id="trackAudio" controls controlsList="nodownload noplaybackrate" style="width: 100%; filter: invert(0.9);">
+                            <source src="tracks/i-like-it-demo-2.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+
+                    <p style="line-height: 1.8; margin-bottom: 30px;">
+                        Mình bán file cho anh em có nhu cầu mang đi bar hoặc kiếm tiền từ bản remix này nhé. Giá công khai 6m, 1 slot duy nhất.
+                        File project bài này cho ae muốn breakdown, fix hoặc đơn giản là học hỏi. Giá công khai 10m, 1 slot duy nhất.
+                    </p>
+
+                    <div class="social-links" style="justify-content: flex-start; gap: 20px;">
+                        <a href="https://soundcloud.com/hiepdrum/i-like-it-hiep-drum" target="_blank" rel="noopener noreferrer" class="tracks-btn">
+                            Listen on SoundCloud &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="copyright">
+        <p>&copy; 2026 Hiep Drum. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('trackAudio');
+            const vinyl = document.getElementById('vinylRecord');
+            const playBtn = document.getElementById('vinylPlayBtn');
+
+            if (audio && playBtn) {
+                // Toggle play/pause when vinyl button is clicked
+                playBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (audio.paused) {
+                        audio.play().catch(err => console.error("Playback error:", err));
+                    } else {
+                        audio.pause();
+                    }
+                });
+
+                // UI feedback when audio starts playing
+                audio.addEventListener('play', () => {
+                    if (vinyl) vinyl.classList.add('is-playing');
+                    playBtn.classList.add('is-playing');
+                    playBtn.innerHTML = '&#10074;&#10074;'; // Pause icon
+                });
+
+                // UI feedback when audio pauses
+                audio.addEventListener('pause', () => {
+                    if (vinyl) vinyl.classList.remove('is-playing');
+                    playBtn.classList.remove('is-playing');
+                    playBtn.innerHTML = '&#9654;'; // Play icon
+                });
+
+                // UI feedback when audio ends
+                audio.addEventListener('ended', () => {
+                    if (vinyl) vinyl.classList.remove('is-playing');
+                    playBtn.classList.remove('is-playing');
+                    playBtn.innerHTML = '&#9654;';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

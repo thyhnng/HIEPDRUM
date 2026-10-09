@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tracks | HIEP DRUM</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header tracks-header">
+        <div class="navbar-wrapper">
+            <div class="container navbar">
+                <div class="logo">
+                    <a href="index.html#home"><img src="images/logo.png" alt="Hiep Drum Logo" width="120"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="tracks.html" class="active">Tracks</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main All Tracks Content -->
+    <main class="all-tracks-page">
+        <div class="container">
+            <div class="page-title-box">
+                <h1 class="section-title">CURRENT TRACKS</h1>
+                <p class="subtitle">ALL REMIXES AVAILABLE</p>
+            </div>
+
+            <!-- Filter & Search Controls -->
+            <div class="tracks-filter-bar">
+                <input type="text" id="trackSearch" placeholder="Search track name..." onkeyup="filterTracks()">
+                <div class="filter-tags">
+                    <button class="filter-btn active" onclick="filterCategory('all', this)">All</button>
+                    <button class="filter-btn" onclick="filterCategory('slot', this)">Slot</button>
+                    <button class="filter-btn" onclick="filterCategory('file', this)">File</button>
+                </div>
+            </div>
+
+            <!-- Full Tracks Grid -->
+            <div class="tracks-page-grid" id="allTracksGrid">
+
+                <!-- Track 1 -->
+                <div class="vinyl-card track-item" data-category="slot" data-title="ai khoc noi dau nay">
+                    <a href="track-ai-khoc-noi-dau-nay.html" class="vinyl-card-link">
+                        <div class="sleeve">
+                            <span class="badge">Slot</span>
+                            <h3>Ai Khoc Noi Dau Nay</h3>
+                            <p>Hiep Drum (2026)</p>
+                        </div>
+                        <img src="images/disc.png" alt="Ai Khoc Noi Dau Nay Disc" class="disc">
+                    </a>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="vinyl-card track-item" data-category="file" data-title="stereo love">
+                    <a href="track-stereo-love.html" class="vinyl-card-link">
+                        <div class="sleeve">
+                            <span class="badge">File</span>
+                            <h3>Stereo Love</h3>
+                            <p>Hiep Drum (2026)</p>
+                        </div>
+                        <img src="images/disc.png" alt="Stereo Love Disc" class="disc">
+                    </a>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="vinyl-card track-item" data-category="slot" data-title="i like it">
+                    <a href="track-i-like-it.html" class="vinyl-card-link">
+                        <div class="sleeve">
+                            <span class="badge">Slot</span>
+                            <h3>I Like It</h3>
+                            <p>Hiep Drum (2026)</p>
+                        </div>
+                        <img src="images/disc.png" alt="I Like It Disc" class="disc">
+                    </a>
+                </div>
+
+                <!-- Track 4 -->
+                <div class="vinyl-card track-item" data-category="slot" data-title="feel good inc">
+                    <a href="track-feel-good-inc.html" class="vinyl-card-link">
+                        <div class="sleeve">
+                            <span class="badge">Slot</span>
+                            <h3>Feel Good INC</h3>
+                            <p>Hiep Drum (2026)</p>
+                        </div>
+                        <img src="images/disc.png" alt="Feel Good INC Disc" class="disc">
+                    </a>
+                </div>
+                
+            </div>
+
+            <div class="back-home-container">
+                <a href="index.html#home" class="tracks-btn">&larr; Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="copyright">
+        <p>&copy; 2026 Hiep Drum. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive Track Filtering Script -->
+    <script>
+        const audio = document.getElementById('trackAudio');
+        const vinyl = document.getElementById('vinylRecord');
+        const playBtn = document.getElementById('vinylPlayBtn');
+
+        if (audio && vinyl && playBtn) {
+            // Toggle play/pause when center button is clicked
+            playBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            });
+
+            // Update UI when audio starts playing
+            audio.addEventListener('play', () => {
+                vinyl.classList.add('is-playing');
+                playBtn.classList.add('is-playing');
+                playBtn.innerHTML = '&#10074;&#10074;'; // Pause icon
+            });
+
+            // Update UI when audio pauses
+            audio.addEventListener('pause', () => {
+                vinyl.classList.remove('is-playing');
+                playBtn.classList.remove('is-playing');
+                playBtn.innerHTML = '&#9654;'; // Play icon
+            });
+
+            // Update UI when track finishes
+            audio.addEventListener('ended', () => {
+                vinyl.classList.remove('is-playing');
+                playBtn.classList.remove('is-playing');
+                playBtn.innerHTML = '&#9654;';
+            });
+        }
+    </script>
+</body>
+</html>
