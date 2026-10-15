@@ -41,24 +41,18 @@
                 <p class="subtitle">ALL REMIXES AVAILABLE</p>
             </div>
 
-            <!-- Filter & Search Controls -->
+            <!-- Search Bar -->
             <div class="tracks-filter-bar">
                 <input type="text" id="trackSearch" placeholder="Search track name..." onkeyup="filterTracks()">
-                <div class="filter-tags">
-                    <button class="filter-btn active" onclick="filterCategory('all', this)">All</button>
-                    <button class="filter-btn" onclick="filterCategory('slot', this)">Slot</button>
-                    <button class="filter-btn" onclick="filterCategory('file', this)">File</button>
-                </div>
             </div>
 
             <!-- Full Tracks Grid -->
             <div class="tracks-page-grid" id="allTracksGrid">
 
                 <!-- Track 1 -->
-                <div class="vinyl-card track-item" data-category="slot" data-title="ai khoc noi dau nay">
-                    <a href="track-ai-khoc-noi-dau-nay.html" class="vinyl-card-link">
+                <div class="vinyl-card track-item" data-title="ai khoc noi dau nay">
+                    <a href="track-detail.html?track=ai-khoc-noi-dau-nay" class="vinyl-card-link">
                         <div class="sleeve">
-                            <span class="badge">Slot</span>
                             <h3>Ai Khoc Noi Dau Nay</h3>
                             <p>Hiep Drum (2026)</p>
                         </div>
@@ -67,10 +61,9 @@
                 </div>
 
                 <!-- Track 2 -->
-                <div class="vinyl-card track-item" data-category="file" data-title="stereo love">
-                    <a href="track-stereo-love.html" class="vinyl-card-link">
+                <div class="vinyl-card track-item" data-title="stereo love">
+                    <a href="track-detail.html?track=stereo-love" class="vinyl-card-link">
                         <div class="sleeve">
-                            <span class="badge">File</span>
                             <h3>Stereo Love</h3>
                             <p>Hiep Drum (2026)</p>
                         </div>
@@ -79,10 +72,9 @@
                 </div>
 
                 <!-- Track 3 -->
-                <div class="vinyl-card track-item" data-category="slot" data-title="i like it">
-                    <a href="track-i-like-it.html" class="vinyl-card-link">
+                <div class="vinyl-card track-item" data-title="i like it">
+                    <a href="track-detail.html?track=i-like-it" class="vinyl-card-link">
                         <div class="sleeve">
-                            <span class="badge">Slot</span>
                             <h3>I Like It</h3>
                             <p>Hiep Drum (2026)</p>
                         </div>
@@ -91,10 +83,9 @@
                 </div>
 
                 <!-- Track 4 -->
-                <div class="vinyl-card track-item" data-category="slot" data-title="feel good inc">
-                    <a href="track-feel-good-inc.html" class="vinyl-card-link">
+                <div class="vinyl-card track-item" data-title="feel good inc">
+                    <a href="track-detail.html?track=feel-good-inc" class="vinyl-card-link">
                         <div class="sleeve">
-                            <span class="badge">Slot</span>
                             <h3>Feel Good INC</h3>
                             <p>Hiep Drum (2026)</p>
                         </div>
@@ -117,40 +108,19 @@
 
     <!-- Interactive Track Filtering Script -->
     <script>
-        const audio = document.getElementById('trackAudio');
-        const vinyl = document.getElementById('vinylRecord');
-        const playBtn = document.getElementById('vinylPlayBtn');
+        function filterTracks() {
+            const input = document.getElementById('trackSearch').value.toLowerCase();
+            const grid = document.getElementById('allTracksGrid');
+            const items = grid.getElementsByClassName('track-item');
 
-        if (audio && vinyl && playBtn) {
-            // Toggle play/pause when center button is clicked
-            playBtn.addEventListener('click', () => {
-                if (audio.paused) {
-                    audio.play();
+            for (let i = 0; i < items.length; i++) {
+                const title = items[i].getAttribute('data-title');
+                if (title.includes(input)) {
+                    items[i].style.display = "";
                 } else {
-                    audio.pause();
+                    items[i].style.display = "none";
                 }
-            });
-
-            // Update UI when audio starts playing
-            audio.addEventListener('play', () => {
-                vinyl.classList.add('is-playing');
-                playBtn.classList.add('is-playing');
-                playBtn.innerHTML = '&#10074;&#10074;'; // Pause icon
-            });
-
-            // Update UI when audio pauses
-            audio.addEventListener('pause', () => {
-                vinyl.classList.remove('is-playing');
-                playBtn.classList.remove('is-playing');
-                playBtn.innerHTML = '&#9654;'; // Play icon
-            });
-
-            // Update UI when track finishes
-            audio.addEventListener('ended', () => {
-                vinyl.classList.remove('is-playing');
-                playBtn.classList.remove('is-playing');
-                playBtn.innerHTML = '&#9654;';
-            });
+            }
         }
     </script>
 </body>
