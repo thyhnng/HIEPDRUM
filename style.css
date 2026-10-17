@@ -807,11 +807,28 @@ nav ul li a.active {
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    
+    .navbar-wrapper {
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
     .navbar {
         flex-direction: column;
         gap: 6px;
-        padding: 0px 15px;
         margin-bottom: 10px;
+        padding: 10px 15px;
     }
 
     nav ul {
@@ -854,10 +871,21 @@ nav ul li a.active {
     .about-container {
         flex-direction: column;
         text-align: center;
+        gap: 20px !important;
     }
+
+    section.about {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
 
     .about-text {
         max-width: 100%;
+    }
+
+    .about-text p {
+        font-size: 10px;
     }
 
     .input-row {
