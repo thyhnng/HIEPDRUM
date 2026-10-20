@@ -323,7 +323,7 @@ nav ul li a.active {
 /* --- Contact Section --- */
 .contact {
     min-height: 90vh;
-    padding: 80px 20px 40px 20px;
+    padding: 70px 20px 50px 20px;
     background: linear-gradient(180deg, #080808 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.2) 30%, #080808 100%),
                 url('images/contact-bg.gif') center/cover no-repeat;
     display: flex;
@@ -459,12 +459,12 @@ nav ul li a.active {
 }
 
 .all-tracks-page {
-    padding-top: 140px;
-    padding-bottom: 80px;
+    padding-top: 120px;
+    padding-bottom: 60px;
     background: linear-gradient(180deg, #151518 0%, #0b0b0e 50%, #080808 100%);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: auto;
 }
 
 .page-title-box {
@@ -808,6 +808,13 @@ nav ul li a.active {
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
 
+    .navbar-wrapper {
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: env(safe-area-inset-top);
+    }
+
     body {
         margin: 0;
         padding: 0;
@@ -818,12 +825,6 @@ nav ul li a.active {
         padding-top: 0;
     }
     
-    .navbar-wrapper {
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
-
     .navbar {
         flex-direction: column;
         gap: 6px;
@@ -843,6 +844,75 @@ nav ul li a.active {
 
     .hero-content {
         padding-top: 160px;
+    }
+
+    /* --- Updated Tracks Grid for Mobile (2 columns) --- */
+    .tracks-page-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 12px;
+        padding: 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .track-item {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .track-item .vinyl-card-link {
+        justify-content: center;
+    }
+
+    .track-item .sleeve {
+        width: 110px;
+        height: 110px;
+        padding: 9px;
+    }
+
+    .track-item .sleeve h3 {
+        font-size: 10.5px;
+    }
+
+    .track-item .sleeve p {
+        font-size: 8.5px;
+    }
+
+    .track-item .disc {
+        width: 100px;
+        height: 100px;
+        margin-left: -45px;
+    }
+
+    /* --- Offer Box Text & Price Tag Adjustments for Mobile --- */
+    .clickable-offer {
+        padding: 12px 14px;
+    }
+
+    .offer-tag {
+        font-size: 12px;
+    }
+
+    .status-badge {
+        font-size: 8px;
+        padding: 2px 6px;
+    }
+
+    .status-badge.available::before {
+        width: 5px;
+        height: 5px;
+        margin-right: 4px;
+    }
+
+    .offer-price {
+        font-size: 9.5px;
+        padding: 4px 8px;
+    }
+
+    .track-offer-box .offer-desc {
+        font-size: 8.5px !important;
+        line-height: 1.3 !important;
     }
 
     .tracks-grid {
@@ -871,15 +941,15 @@ nav ul li a.active {
     .about-container {
         flex-direction: column;
         text-align: center;
+        gap: 40px !important;
     }
-
 
     .about-text {
         max-width: 100%;
     }
 
     .about-text p {
-        font-size: 10px;
+        font-size: 13px !important;
     }
 
     .input-row {
@@ -929,10 +999,5 @@ nav ul li a.active {
     .clickable-offer {
         width: 100% !important;
         text-align: left !important;
-    }
-
-    .track-offer-box .offer-desc {
-        font-size: 9.5px !important;
-        line-height: 1.35 !important;
     }
 }

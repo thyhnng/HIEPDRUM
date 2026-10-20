@@ -1,0 +1,44 @@
+{
+  "tracks": {
+    "i-like-it": {
+      "title": "I Like It",
+      "artist": "Hiep Drum",
+      "year": 2026,
+      "cover": "images/cover1.jpg",
+      "audio": "tracks/i-like-it-demo-2.mp3",
+      "file320Price": "6.000.000 VNĐ",
+      "projectPrice": "10.000.000 VNĐ",
+      "soundcloud": "https://soundcloud.com/hiepdrum/i-like-it-hiep-drum"
+    },
+    "stereo-love": {
+      "title": "Stereo Love",
+      "artist": "Hiep Drum",
+      "year": 2026,
+      "cover": "images/cover1.jpg",
+      "audio": "tracks/stereo-love-demo.mp3",
+      "file320Price": "6.000.000 VNĐ",
+      "projectPrice": "10.000.000 VNĐ",
+      "soundcloud": "https://soundcloud.com/hiepdrum/stereo-love-remix"
+    },
+    "ai-khoc-noi-dau-nay": {
+      "title": "Ai Khoc Noi Dau Nay",
+      "artist": "Hiep Drum",
+      "year": 2026,
+      "cover": "images/cover2.jpg",
+      "audio": "tracks/ai-khoc-demo.mp3",
+      "file320Price": "6.000.000 VNĐ",
+      "projectPrice": "10.000.000 VNĐ",
+      "soundcloud": "https://soundcloud.com/hiepdrum/ai-khoc-noi-dau-nay"
+    },
+    "feel-good-inc": {
+      "title": "Feel Good INC",
+      "artist": "Hiep Drum",
+      "year": 2026,
+      "cover": "images/cover2.jpg",
+      "audio": "tracks/feel-good-demo.mp3",
+      "file320Price": "6.500.000 VNĐ",
+      "projectPrice": "10.000.000 VNĐ",
+      "soundcloud": "https://soundcloud.com/hiepdrum/feel-good-inc"
+    }
+  }
+}
